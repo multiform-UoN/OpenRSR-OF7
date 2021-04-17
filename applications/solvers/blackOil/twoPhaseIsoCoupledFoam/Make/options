@@ -13,7 +13,7 @@ EXE_INC = \
     -I../../../../ThirdParty/rheoTool/sparseMatrixSolvers/lnInclude \
     -isystem$(PETSC_DIR)/$(PETSC_ARCH)/include \
     -isystem$(PETSC_DIR)/include \
-    $(PFLAGS) $(PINC)
+    -isystem$(MPI_DIR)/include $(PFLAGS) $(PINC)
 
 EXE_LIBS = \
     -lfiniteVolume \

@@ -140,7 +140,7 @@ public:
                (
                  nbrFvMesh().boundary()
                  [
-                    neighbPatchID()
+                    regionCoupledBase_.nbrPatchID()
                  ]
                );
             }

@@ -119,11 +119,14 @@ Foam::scalar Foam::impesControl<RockType,nPhases>::deltaTFromAlphaEquation
 ) const
 {
     // Approximate ddt(phase.alpha)
-    scalarField dSdt = mag
+    scalarField dSdt
+    (
+    mag
     (
         (-fvc::div(phi))->internalField()
         + explicitSource 
-    ) / coefft;
+    ) / coefft
+    );
     return dSMax_/(gMax(dSdt)+vSmall);
 }
 

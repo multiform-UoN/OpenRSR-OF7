@@ -14,7 +14,7 @@ if (!bMesh[patchI].coupled())
      // if the other half of a given AMI was sent to another processor. In pratice, nothing
      // happens bellow if camipp is zero-sized.
      const regionCoupledBaseFvPatch& camipp = refCast<const regionCoupledAMIFvPatch>(pfvPatch);     
-     const regionCoupledBaseFvPatch& neicamipp = refCast<const regionCoupledAMIFvPatch>(pfvPatch).neighbPatch();   
+     const regionCoupledBaseFvPatch& neicamipp = refCast<const regionCoupledAMIFvPatch>(pfvPatch).neighbFvPatch();   
      
      const labelList& ownFC = camipp.faceCells();   
      const labelList& neiFC = neicamipp.faceCells();    

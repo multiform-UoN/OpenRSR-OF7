@@ -122,7 +122,7 @@ void CoatsNo<RockType>::correct()
 
     // Preparations
     dimensionedScalar rSmall("epsRate",dimVolume/dimTime, vSmall);
-    surfaceScalarField magPhi = mag(this->phi_);
+    surfaceScalarField magPhi(mag(this->phi_));
     scalarField symmPhaseKr = 
             muRatio_*Foam::pow(krn,2) + 2 * krc * krn + 1/muRatio_*Foam::pow(krc,2);
 

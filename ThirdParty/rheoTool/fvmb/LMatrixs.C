@@ -27,24 +27,24 @@ License
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-namespace Foam
-{
+//namespace Foam
+//{
 
-namespace fvmb
-{
+//namespace fvmb
+//{
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
-defineTemplateTypeNameAndDebug(LMatrix<scalar>, 0);
-defineTemplateTypeNameAndDebug(LMatrix<vector>, 0);
-defineTemplateTypeNameAndDebug(LMatrix<sphericalTensor>, 0);
-defineTemplateTypeNameAndDebug(LMatrix<symmTensor>, 0);
-defineTemplateTypeNameAndDebug(LMatrix<tensor>, 0);
+defineTemplateTypeNameAndDebug(Foam::fvmb::LMatrix<Foam::scalar>, 0);
+defineTemplateTypeNameAndDebug(Foam::fvmb::LMatrix<Foam::vector>, 0);
+defineTemplateTypeNameAndDebug(Foam::fvmb::LMatrix<Foam::sphericalTensor>, 0);
+defineTemplateTypeNameAndDebug(Foam::fvmb::LMatrix<Foam::symmTensor>, 0);
+defineTemplateTypeNameAndDebug(Foam::fvmb::LMatrix<Foam::tensor>, 0);
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-} // End namespace fvmb
+//} // End namespace fvmb
 
-} // End namespace Foam
+//} // End namespace Foam
 
 // ************************************************************************* //

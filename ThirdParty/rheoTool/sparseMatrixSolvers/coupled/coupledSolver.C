@@ -24,6 +24,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "coupledSolver.H"
+#include "cyclicTransform.H"
 #include <chrono>
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
@@ -220,9 +221,9 @@ void Foam::coupledSolver::checkLimitations
      {  
        // No support for rotational transform in non-scalar variables  
        if (
-            refCast<const cyclicFvPatch>(pfvPatch).cyclicPatch().transform()
+            refCast<const cyclicFvPatch>(pfvPatch).cyclicPatch().transformType()
             ==
-            coupledPolyPatch::transformType::ROTATIONAL
+            cyclicTransform::transformTypes::ROTATIONAL
           )
        {
            FatalErrorInFunction
@@ -235,9 +236,9 @@ void Foam::coupledSolver::checkLimitations
      {
        // No support for rotational transform in non-scalar variables     
        if (
-            refCast<const processorCyclicFvPatch>(pfvPatch).procPolyPatch().transform()
+            refCast<const processorCyclicFvPatch>(pfvPatch).procPolyPatch().transformType()
             ==
-            coupledPolyPatch::transformType::ROTATIONAL
+            cyclicTransform::transformTypes::ROTATIONAL
           )
        {
            FatalErrorInFunction
@@ -250,9 +251,9 @@ void Foam::coupledSolver::checkLimitations
      {
        // No support for rotational transform in non-scalar variables     
        if (
-            refCast<const cyclicAMIFvPatch>(pfvPatch).cyclicAMIPatch().transform()
+            refCast<const cyclicAMIFvPatch>(pfvPatch).cyclicAMIPatch().transformType()
             ==
-            coupledPolyPatch::transformType::ROTATIONAL
+            cyclicTransform::transformTypes::ROTATIONAL
           )
        {
            FatalErrorInFunction
@@ -996,7 +997,7 @@ void Foam::coupledSolver::computeAllocationPetsc
       else if (isType<cyclicAMIFvPatch>(pfvPatch))
       {       
        const cyclicAMIPolyPatch& camipp = refCast<const cyclicAMIFvPatch>(pfvPatch).cyclicAMIPatch();
-       const cyclicAMIPolyPatch& neicamipp = camipp.neighbPatch();
+       const cyclicAMIPolyPatch& neicamipp = camipp.nbrPatch();
        
        const labelList& ownFC = camipp.faceCells();   
      

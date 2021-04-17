@@ -1,7 +1,3 @@
-interpolations/basicInterpolationTable/basicInterpolationTables.C
-interpolations/linearInterpolationTable/linearInterpolationTables.C
-interpolations/steppedInterpolationTable/steppedInterpolationTables.C
-
 FVFModels/FVFModel/FVFModel.C
 FVFModels/tabularFVFvsPressure/tabularFVFvsPressure.C
 

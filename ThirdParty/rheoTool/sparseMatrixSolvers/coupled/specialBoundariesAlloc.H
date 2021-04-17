@@ -11,7 +11,7 @@ if (!bMesh[patchI].coupled())
      const fvPatch& pfvPatch = bMesh[patchI];  
         
      const regionCoupledBaseFvPatch& camipp = refCast<const regionCoupledAMIFvPatch>(pfvPatch);     
-     const regionCoupledBaseFvPatch& neicamipp = refCast<const regionCoupledAMIFvPatch>(pfvPatch).neighbPatch();   
+     const regionCoupledBaseFvPatch& neicamipp = refCast<const regionCoupledAMIFvPatch>(pfvPatch).nbrPatch();   
      
      const labelList& ownFC = camipp.faceCells();   
           

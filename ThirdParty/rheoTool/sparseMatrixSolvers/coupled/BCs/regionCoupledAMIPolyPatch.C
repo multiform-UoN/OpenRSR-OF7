@@ -122,7 +122,7 @@ Foam::regionCoupledAMIPolyPatch::~regionCoupledAMIPolyPatch()
 
 void Foam::regionCoupledAMIPolyPatch::initGeometry(PstreamBuffers& pBufs)
 {
-    polyPatch::initGeometry(pBufs);
+    polyPatch::initCalcGeometry(pBufs);
 }
 
 

@@ -9,7 +9,7 @@ EXE_INC = \
     -I../fvmb/lnInclude \
     -isystem$(PETSC_DIR)/$(PETSC_ARCH)/include \
     -isystem$(PETSC_DIR)/include \
-    $(PFLAGS) $(PINC)
+    -isystem$(MPI_DIR)/include $(PFLAGS) $(PINC)
 
 LIB_LIBS = \
     -lfiniteVolume \
