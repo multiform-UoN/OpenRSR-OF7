@@ -36,7 +36,7 @@ SourceFiles
 #define steppedInterpolationTable_H
 
 #include "basicInterpolationTable.H"
-#include "tableReader.H"
+#include "TableReader.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
