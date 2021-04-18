@@ -36,7 +36,7 @@ SourceFiles
 #define linearInterpolationTable_H
 
 #include "basicInterpolationTable.H"
-#include "tableReader.H"
+#include "TableReader.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

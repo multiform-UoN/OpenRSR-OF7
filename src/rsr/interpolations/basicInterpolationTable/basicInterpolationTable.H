@@ -55,7 +55,7 @@ SourceFiles
 #include "List.H"
 #include "Tuple2.H"
 #include "dictionary.H"
-#include "tableReaders.H"
+#include "TableReader.H"
 #include "fieldTypes.H"
 #include "autoPtr.H"
 #include "runTimeSelectionTables.H"
@@ -80,7 +80,7 @@ protected:
         fileName fileName_;
 
         //- Values reader
-        autoPtr<tableReader<List<Type>>> reader_;
+        autoPtr<TableReader<List<Type>>> reader_;
 
         //- Values as a List
         List<Tuple2<scalar, List<Type>>> values_;

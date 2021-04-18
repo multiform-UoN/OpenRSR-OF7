@@ -30,8 +30,8 @@ License
 #include "tensorList.H"
 
 #include "basicInterpolationTables.H"
-#include "tableReaders.H"
-#include "openFoamTableReader.H"
+#include "TableReader.H"
+//#include "openFoamTableReader.H"
 #include "addToRunTimeSelectionTable.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -42,8 +42,8 @@ namespace Foam
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
 #define defineTableReaderType(dataType)                                        \
-    defineNamedTemplateTypeNameAndDebug(tableReader<dataType >, 0);            \
-    defineTemplatedRunTimeSelectionTable(tableReader, dictionary, dataType);
+    defineNamedTemplateTypeNameAndDebug(TableReader<dataType >, 0);            \
+    defineTemplatedRunTimeSelectionTable(TableReader, dictionary, dataType);
 
 #define makeListTableReaders(typeTableReader)                                  \
                                                                                \
@@ -62,14 +62,24 @@ namespace Foam
     );
 
 // Define Base Table Readers for list types
-defineTableReaderType(scalarList);
-defineTableReaderType(vectorList);
-defineTableReaderType(sphericalTensorList);
-defineTableReaderType(symmTensorList);
-defineTableReaderType(tensorList);
+#define makeTableReaders(Type)                                                 \
+    defineTableReader(Type);                                                   \
+    makeTableReader(Foam, Type)
+
+makeTableReaders(scalarList);
+makeTableReaders(vectorList);
+makeTableReaders(sphericalTensorList);
+makeTableReaders(symmTensorList);
+makeTableReaders(tensorList);
+
+//defineTableReaderType(scalarList);
+//defineTableReaderType(vectorList);
+//defineTableReaderType(sphericalTensorList);
+//defineTableReaderType(symmTensorList);
+//defineTableReaderType(tensorList);
 
 // Declare OpenFOAM readers for list tables
-makeListTableReaders(openFoamTableReader);
+//makeListTableReaders(openFoamTableReader);
 
 // Define Base Interpolation Tables for primitive types
 defineInterpolationTableType(scalar);

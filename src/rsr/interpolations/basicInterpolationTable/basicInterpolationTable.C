@@ -25,6 +25,7 @@ License
 
 #include "basicInterpolationTable.H"
 #include "fileName.H"
+#include "TableFile.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
@@ -157,7 +158,7 @@ Foam::basicInterpolationTable<Type>::basicInterpolationTable
 )
 :
     fileName_(dict.lookup("file")),
-    reader_(tableReader<List<Type>>::New(dict)),
+    reader_(TableReader<List<Type>>::New("foam", dict)),
     values_(),
 	isPeriodic_(dict.lookupOrDefault<bool>("periodic", false)),
 	startTime_(0),
